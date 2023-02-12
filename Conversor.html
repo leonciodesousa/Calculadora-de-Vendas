@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Conversor de Moedas</title>
+  </head>
+  <body>
+    <h1>Conversor de Moedas</h1>
+    <p>Insira o valor em reais:</p>
+    <input type="text" id="inputValue">
+    <br><br>
+    <p>Selecione a moeda de saída:</p>
+    <select id="outputCurrency">
+      <option value="USD">Dólar Americano (USD)</option>
+      <option value="EUR">Euro (EUR)</option>
+    </select>
+    <br><br>
+    <p>Valor convertido:</p>
+    <p id="outputValue"></p>
+
+    <script>
+      const inputValue = document.getElementById("inputValue");
+      const outputCurrency = document.getElementById("outputCurrency");
+      const outputValue = document.getElementById("outputValue");
+
+      inputValue.addEventListener("input", function () {
+        let value = inputValue.value;
+        let currency = outputCurrency.value;
+        if (currency === "USD") {
+          outputValue.innerHTML = "USD " + (value / 5.67).toFixed(2);
+        } else if (currency === "EUR") {
+          outputValue.innerHTML = "EUR " + (value / 6.56).toFixed(2);
+        }
+      });
+    </script>
+  </body>
+</html>
